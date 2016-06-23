@@ -15,7 +15,7 @@ The simple feature-packed File API for PHP has arrived.
 
 `File::write($data)` - pretty self-explanatory, writes the specified data to the file opened with File::open.
 
-`File::read` - pretty self-explanatory, reads all the data from the file opened with File::open.
+`File::read(void)` - pretty self-explanatory, reads all the data from the file opened with File::open.
 
 `File::filesize(void)` - pretty self-explanatory, returns the filesize of the file opened with File::open(including the unit(Bytes, KB, MB, etc...)).`
 
