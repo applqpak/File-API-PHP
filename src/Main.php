@@ -338,41 +338,30 @@
     --------------------------------------------------------------------------------
     */
 
-    public function read($bytes = 1024)
+    public function read()
     {
 
-      if(!(isset($bytes)))
+      if($this->getInstance() === null)
       {
 
-        throw new \FileException("All argument(s) parsed to File::read must not be null.");
+        throw new \FileException("You must first open a file(using File::open) before trying to read a file.");
 
       }
       else
       {
 
-        if($this->getInstance() === null)
-        {
+        $fp = @file_get_contents($this->getfileName());
 
-          throw new \FileException("You must first open a file(using File::open) before trying to read a file.");
+       if(!($fp))
+       {
+
+          throw new \FileException("Could not read the specified file.");
 
         }
         else
         {
 
-          $fp = @file_get_contents($this->getfileName());
-
-          if(!($fp))
-          {
-
-            throw new \FileException("Could not read the specified file.");
-
-          }
-          else
-          {
-
-            return $fp;
-
-          }
+          return $fp;
 
         }
 
