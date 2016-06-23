@@ -352,8 +352,8 @@
 
         $fp = @file_get_contents($this->getfileName());
 
-       if(!($fp))
-       {
+        if(!($fp))
+        {
 
           throw new \FileException("Could not read the specified file.");
 
